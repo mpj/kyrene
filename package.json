@@ -1,0 +1,19 @@
+{
+  "name": "kyrene",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "hahahah"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mpj/kyrene.git"
+  },
+  "author": "Mattias Petter Johansson <mpj@mpj.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mpj/kyrene/issues"
+  },
+  "homepage": "https://github.com/mpj/kyrene#readme"
+}
