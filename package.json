@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "hahahah"
+    "test": "hahahah",
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/mpj/kyrene/issues"
   },
-  "homepage": "https://github.com/mpj/kyrene#readme"
+  "homepage": "https://github.com/mpj/kyrene#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "es6-promise": "^3.1.2",
+    "express": "^4.13.4",
+    "superagent-promise": "^1.1.0"
+  }
 }

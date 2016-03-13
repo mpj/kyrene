@@ -1,0 +1,15 @@
+{
+    "eventName": "button",
+    "url": "http://104.155.85.250:3000/slurp",
+    "requestType": "POST",
+    "json": {
+        "gauges": [
+            {
+                "name": "{{SPARK_EVENT_NAME}}",
+                "value": "{{SPARK_EVENT_VALUE}}",
+                "source": "{{SPARK_CORE_ID}}"
+            }
+        ]
+    },
+    "mydevices": true
+}
