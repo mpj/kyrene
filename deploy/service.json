@@ -1,0 +1,17 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "kyrene-service"
+  },
+  "spec": {
+    "ports": [{
+      "port": 3000,
+      "targetPort": 3000
+    }],
+    "selector": {
+      "service_name": "kyrene"
+    },
+    "type": "LoadBalancer"
+  }
+}

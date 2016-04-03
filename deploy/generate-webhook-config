@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+'use strict';
+require('shelljs/global');
+const fs = require('fs')
+exec(
+  'kubectl get services',
+  { silent: true },
+  function(code, stdout) {
+    const secondIPRegex =
+      /kyrene-service\s+\w+\.\w+\.\w+\.\w+\s+(\w+\.\w+\.\w+\.\w+)/
+
+    const matches = stdout.match(secondIPRegex)
+    const publicIP = matches[1]
+
+    const templateFile = './service-hook-template.json'
+    const outputFile = './particle-webhook.json'
+    fs.readFile(templateFile, 'utf8', function (err, contents) {
+      if (err) { return console.error(err); }
+      const newContents =
+        contents.replace('{{SERVER_IP_ADDRESS}}', publicIP)
+
+      fs.writeFile(outputFile, newContents, function(err) {
+        if (err) { return console.error(err); }
+        console.log('Successfully wrote to ', outputFile)
+      });
+    })
+  }
+)
