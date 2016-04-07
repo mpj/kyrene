@@ -7,7 +7,7 @@ exec(
   { silent: true },
   function(code, stdout) {
     const secondIPRegex =
-      /kyrene-service\s+\w+\.\w+\.\w+\.\w+\s+(\w+\.\w+\.\w+\.\w+)/
+      /kyrene-service\s+.*\s+((\w+\.){3}\w+)/
 
     const matches = stdout.match(secondIPRegex)
     const publicIP = matches[1]
