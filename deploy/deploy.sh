@@ -25,10 +25,6 @@ kubectl create -f replication-controller.json
 # Expose replicationcontroller to the internet
 kubectl create -f service.json
 
-# Exposing will take a little while, so lets sleep
-echo "Waiting two minutes for service to receive an IP..."
-sleep 120
-
 # Generate webhook config
 ./generate-webhook-config
 

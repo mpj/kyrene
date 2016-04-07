@@ -1,8 +1,10 @@
 #!/usr/bin/env node
-'use strict';
-require('shelljs/global');
+'use strict'
+require('shelljs/global')
 const fs = require('fs')
-exec(
+const TIMER = 10 * 1000 // 10 seconds
+
+let execute = exec(
   'kubectl get services',
   { silent: true },
   function(code, stdout) {
@@ -11,6 +13,11 @@ exec(
 
     const matches = stdout.match(secondIPRegex)
     const publicIP = matches[1]
+
+    if (!matches) {
+      console.log('Service IP not ready. Retrying in', TIMER, 'seconds')
+      return setTimeout(execute, TIMER)
+    }
 
     const templateFile = './service-hook-template.json'
     const outputFile = './particle-webhook.json'
@@ -26,3 +33,5 @@ exec(
     })
   }
 )
+
+execute()
