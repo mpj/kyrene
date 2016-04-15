@@ -22,7 +22,7 @@
         "containers": [
           {
             "name": "kyrene-container",
-            "image": "gcr.io/mpj-test-1221/a73b0a65b7ad",
+            "image": "gcr.io/mpj-test-1221/kyrene:1",
             "ports": [
               {
                 "containerPort": 3000,
